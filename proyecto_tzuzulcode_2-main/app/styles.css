@@ -1,0 +1,232 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  background-color: #333333;
+}
+#root{
+  position: relative;
+}
+/* ===========================================*/
+/*===============HEADER=======================*/
+/* ===========================================*/
+
+.header {
+  position: sticky;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  /* border: 5px solid red;
+  text-align: center;
+  font-size: 32px;
+  top: 0;*/
+  /* background-color: #201537;  */
+  background-color: #0b0716;
+  z-index: 1;
+}
+.header_logo{
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: rebeccapurple; */
+}
+.header_logo ion-icon{
+  font-size: 2.5rem;
+  z-index: 10;
+}
+.header_search{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: pink; */
+}
+
+#search_input{
+  font-size: 1.5rem;
+  outline: none;
+}
+#search_button ion-icon{
+  font-size: 1.6rem;
+}
+.header_icons{
+  width: 20%;
+  height: 100%;
+  /* background-color: rgb(145, 62, 76); */
+}
+/* ===========================================*/
+/*===============MAIN=======================*/
+/* ===========================================*/
+#main {
+  /* border: 5px solid rgb(196, 110, 110); */
+  /* background-color: #0b0716; */
+  background-color: #1c1c1c;
+  text-align: center;
+}
+.Landing {
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
+  padding: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c1c1c;
+  gap: 30px;
+  z-index: 1;
+}
+
+/* ===========================================*/
+/*================VIDEO=======================*/
+/* ===========================================*/
+.videoRepro {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 80px;
+  /* padding: 50px 40px 0 30px; */
+  padding-top: 50px;
+}
+video {
+  width: 100%;
+}
+
+
+/* .video-container{
+  width: 80%;
+} */
+.video_container{
+  color: rgba(255, 255, 255, 0.808);
+}
+.vid{
+  display: flex;
+  gap: 3px;
+  height: 100px;
+}
+
+.other_vids{
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title_contain{
+  width: 200px;
+  color: rgba(255, 255, 255, 0.774); 
+}
+
+.channel_name, .view{
+  font-size: 0.8rem;
+} */
+
+
+.vid_contain{
+  position: relative;
+  height: 150px;
+  width: 250px;
+}
+.video_landing{
+  height: 200px;
+  width: 300px;
+}
+
+.vid_contain:hover{
+ opacity: 0.9;
+ transform: scale(1.2);
+ transition: ease .5s;
+ z-index: 0;
+}
+.play_icon{
+  position: absolute;
+  display: none;
+  right: 10%;
+  bottom: 10%;
+  height: 54px;
+  width: 54px;
+  border-radius: 50%;
+  background-color: #462196;
+  transform: translateY(8%);
+  /* transition: all 1s; */
+}
+.play_icon.active{
+  display: block;
+  /* transition: all 1s; */
+  transform: translateY(-20%);
+  animation: play .3s linear 1;
+}
+
+@keyframes play {
+  0%{
+    transform: translateY(8%);
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    transform: translateY(-20%);
+    opacity: 1;
+  }
+}
+/* ===========================================*/
+/*================NAVBAR=======================*/
+/* ===========================================*/
+
+
+.Navbar{
+  position: fixed;
+  /* left: -17%; */
+  left: -100%;
+  top: 0;
+  height: 100vh;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  border-right: solid 1px white;
+  background-image: url(./assets/img/bg.svg);
+  background-size: cover;
+  background-position: right;
+  transition: all .5s;
+  z-index: 2;
+  cursor: pointer;
+  color: white;
+}
+.Navbar:hover{
+  left: 0%;
+  transition: all .5s;
+}
+
+.nav_logo_contain{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 10%;
+  border-bottom: 1px solid white
+}
+.nav_links{
+  width: 100%;
+  height: 90%;
+}
+
+/* .nav_icon{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav_icon ion-icon{
+  font-size: 1.8rem;
+} */
