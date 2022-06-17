@@ -13,6 +13,7 @@ const Router = async () => {
       url: "https://my-json-server.typicode.com/LuisAngel98/DB_VIDEOS/videos",
       cbSuccess: (video) => {
         $main.appendChild(LandingPage(video));
+        console.log(video, 'clg video routes') //pasa el array de videos
         // $main.appendChild(Navbar());
 
       }
@@ -24,13 +25,19 @@ const Router = async () => {
         const $div = document.createElement("div");
         $div.classList.add("videoRepro");
         let idLocal = localStorage.getItem("urlId");
+        console.log(idLocal, 'idee local')
         let newvideo = video.find((v) => v.id === Number(idLocal));
         let newothervideos = video.filter((v) => v.id !== idLocal);
         $div.appendChild(Video(newvideo));
         $div.appendChild(OthersVideos(newothervideos));
         console.log(newvideo);
         console.log(newothervideos);
+
+        const $audioRepro = document.createElement("div");
+        $audioRepro.classList.add("audioRepro");
+
         $main.appendChild($div);
+        $main.appendChild($audioRepro);
       }
     });
   }

@@ -45,7 +45,7 @@ const Header = () => {
   const $header = document.createElement("header");
   $header.classList.add("header"); //clase para estilar en css
   $header.innerHTML = `
-    <div class="header_logo"></div>
+    <div class="header_logo"><a href="#/">Home</a></div>
     <div class="header_search">
       <input id="search_input" type="text" placeholder="Search">
       <button id="search_button"><ion-icon name="search-outline"></ion-icon></button>

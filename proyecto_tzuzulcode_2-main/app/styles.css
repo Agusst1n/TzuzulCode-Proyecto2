@@ -7,7 +7,13 @@
 }
 body {
   font-family: sans-serif;
-  background-color: #333333;
+  /* background-color: #333333; */
+  background-color: #1c1c1c;
+
+}
+body::-webkit-scrollbar{
+  /* width: 5px; */
+  display: none;
 }
 #root{
   position: relative;
@@ -36,7 +42,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: rebeccapurple; */
+  background-color: rebeccapurple;
 }
 .header_logo ion-icon{
   font-size: 2.5rem;
@@ -61,30 +67,111 @@ body {
 .header_icons{
   width: 20%;
   height: 100%;
-  /* background-color: rgb(145, 62, 76); */
+  background-color: rgb(145, 62, 76);
 }
 /* ===========================================*/
 /*===============MAIN=======================*/
 /* ===========================================*/
 #main {
-  /* border: 5px solid rgb(196, 110, 110); */
-  /* background-color: #0b0716; */
+  position: relative;
   background-color: #1c1c1c;
-  text-align: center;
+  /* text-align: center; */
 }
+
+a{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.795);
+}
+
 .Landing {
   /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
-  padding: 50px 0;
+  width: 100%;
+  height: 100%;
+  position:relative;
+  padding: 50px 0 0 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: #1c1c1c;
-  gap: 30px;
+  /* background-color: #1c1c1c; */
+  gap: 120px;
   z-index: 1;
 }
 
+.video_enlace{
+  display: none;
+  
+}
+.miniature{
+  height: 170px;
+  width: 300px;
+}
+
+.video_home{
+  position: relative;
+  height: 170px;
+  width: 300px;
+  text-decoration: none;
+}
+.video_home:hover{
+  transform: scale(1.3);
+  transition: .5s;
+}
+
+.video_title{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  /* background-color: #333333; */
+  padding: 0 10px;
+}
+
+.video_info{
+  width: 100%;
+  color: rgba(255, 255, 255, 0.795);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.icon_contain{
+  /* width: 100%; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon_channel{
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title_channel{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.795);
+  margin-bottom: 3px;
+}
+
+.name_channel, .views_home{
+  font-size: 0.8rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
 /* ===========================================*/
 /*================VIDEO=======================*/
 /* ===========================================*/
@@ -93,21 +180,167 @@ body {
   height: 100%;
   display: flex;
   justify-content: space-around;
-  gap: 80px;
+  flex-direction: row;
+  /* flex-direction: column; */
+  gap: 10px;
   /* padding: 50px 40px 0 30px; */
   padding-top: 50px;
+  flex-wrap: wrap;
 }
 video {
   width: 100%;
+  height: auto;
 }
 
 
-/* .video-container{
-  width: 80%;
-} */
 .video_container{
+  position: relative;
   color: rgba(255, 255, 255, 0.808);
+  width: 65%;
+  height: 50%;
 }
+
+.video_container_desc{
+  /* position: absolute; */
+  width: 100%;
+  height: 300px;
+  outline: 1px solid red;
+}
+
+.video_repro_titleContain{
+  display: flex;
+  height: 100px;
+  width: 100%;
+  outline: 1px solid red;
+}
+.video_reproducido_desc{
+  display: flex;
+  height: 200px;
+  width: 100%;
+  outline: 1px solid red;
+}
+
+
+.title_viewes{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  width: 50%;
+  outline: 1px solid blue;
+}
+.likes_div{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+  outline: 1px solid blue;
+  gap: 25px;
+}
+.like, .deslike{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.likeButton{
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #452688;
+}
+.deslikeButton{
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #452688;
+  margin-top: 5px;
+}
+
+.likeButton.active{
+  color: white;
+}
+.deslikeButton.active{
+  color: white;
+}
+
+.video_buttons{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 310px;
+  z-index: 3;
+}
+
+.video_buttons.active{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  z-index: 3;
+}
+
+
+.video_buttons button{
+  font-size: 1.4rem;
+  background-color: transparent;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.control{
+  width: 70%;
+  /* appearance: none; */
+  height: 5px;
+  margin-bottom: 5px;
+  /* background-color: rgb(71, 1, 151); */
+  accent-color: rgb(71, 1, 151);
+  background-color: white;
+  /* box-shadow: inset 0 0 5px rgb(121, 39, 214); */
+  cursor: pointer;
+}
+
+
+.icon_div{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60px;
+  height: 100%;
+  padding: 25px 0;
+}
+.icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+
+.info_div{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 25px 0;
+  width: 50%;
+  height: 100%;
+  outline: solid 1px violet;
+  gap: 10px;
+}
+/*****************************/
+
 .vid{
   display: flex;
   gap: 3px;
@@ -115,7 +348,7 @@ video {
 }
 
 .other_vids{
-  width: 35%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -130,37 +363,34 @@ video {
   font-size: 0.8rem;
 } */
 
-
-.vid_contain{
-  position: relative;
-  height: 150px;
-  width: 250px;
-}
-.video_landing{
-  height: 200px;
-  width: 300px;
+.play_icon ion-icon{
+  font-size: 2.3rem;
+  color: white;
 }
 
-.vid_contain:hover{
- opacity: 0.9;
- transform: scale(1.2);
- transition: ease .5s;
- z-index: 0;
+#play, #fullScreen , #forwardSeconds , #backwardSeconds , #volumen ion-icon{
+  color: #32166e;
 }
+
 .play_icon{
   position: absolute;
   display: none;
   right: 10%;
   bottom: 10%;
-  height: 54px;
-  width: 54px;
+  height: 44px;
+  width: 44px;
   border-radius: 50%;
-  background-color: #462196;
+  background-color: #32166e;
+  border: solid 2px white;
   transform: translateY(8%);
   /* transition: all 1s; */
 }
 .play_icon.active{
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 54px;
+  width: 54px;
   /* transition: all 1s; */
   transform: translateY(-20%);
   animation: play .3s linear 1;
@@ -170,12 +400,18 @@ video {
   0%{
     transform: translateY(8%);
     opacity: 0;
+    height: 40px;
+    width: 40px;
   }
   50%{
     opacity: 0.5;
+    height: 44px;
+    width: 44px;
   }
   100%{
     transform: translateY(-20%);
+    height: 54px;
+    width: 54px;
     opacity: 1;
   }
 }
@@ -183,50 +419,265 @@ video {
 /*================NAVBAR=======================*/
 /* ===========================================*/
 
-
-.Navbar{
-  position: fixed;
-  /* left: -17%; */
-  left: -100%;
-  top: 0;
-  height: 100vh;
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  border-right: solid 1px white;
-  background-image: url(./assets/img/bg.svg);
-  background-size: cover;
-  background-position: right;
-  transition: all .5s;
-  z-index: 2;
-  cursor: pointer;
-  color: white;
-}
-.Navbar:hover{
-  left: 0%;
-  transition: all .5s;
+/* .Navbar{
+  position:fixed;
+  height:100vh;
+  top:0;
+  left:-100%;
+  width:20%;
+  background-color:white;
+  transition: linear .5s ;
 }
 
-.nav_logo_contain{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  height: 10%;
-  border-bottom: 1px solid white
+.Navbar.active{
+  left:0%;
 }
+
+.nav_logo{
+  height:10%;
+  width:100%;
+  border-bottom:2px solid black;
+}
+
 .nav_links{
-  width: 100%;
-  height: 90%;
+  height:90%;
+  width:100%;
 }
-
-/* .nav_icon{
-  height: 100%;
-  width: 50%;
-  display: flex;
-  justify-content: center;
+.menu_icon{
+  width:50%;
+  height:100%;
+  display:flex;
+  justify-content:center;
   align-items: center;
 }
-.nav_icon ion-icon{
-  font-size: 1.8rem;
+.logo{
+  width:50%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+.menu_icon ion-icon{
+  font-size: 2rem;
+}
+ */
+
+
+/* ===========================================*/
+/*================AUDIO=======================*/
+/* ===========================================*/
+
+ .audioRepro{
+  /* position: fixed;
+  bottom: 0; */
+  width: 100%;
+  height: 80px;
+  outline: 1px solid green;
+ }
+
+
+
+ /*@media (min-width: 768px){
+  .videoRepro{
+    flex-direction: column;
+  }
+  .video_container{
+    position: relative;
+    color: rgba(255, 255, 255, 0.808);
+    width: 100%;
+    height: 50%;
+  }
+  .other_vids{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .title_contain{
+    width: 80%;
+    color: rgba(255, 255, 255, 0.774); 
+  }
+  .video_home{
+    position: relative;
+    height: 60%;
+    width: 70%;
+    text-decoration: none;
+  }
+  .miniature{
+    width: 100%;
+    height: 100%;
+  }
+  .video_title{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+  }
+  .title_channel{
+    font-size: 1.7rem;
+  }
+  .name_channel, .views_home{
+    font-size: 1.3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .icon_channel{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } 
+}*/
+
+/*@media (min-width: 987px){
+  .videoRepro{
+    flex-direction: row;
+  }
+  .video_container{
+    position: relative;
+    color: rgba(255, 255, 255, 0.808);
+    width: 100%;
+    height: 50%;
+  }
+  .other_vids{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+   .title_contain{
+    width: 80%;
+    color: rgba(255, 255, 255, 0.774); 
+  }
+  .video_home{
+    position: relative;
+    height: 60%;
+    width: 70%;
+    text-decoration: none;
+  }
+  .miniature{
+    width: 100%;
+    height: 100%;
+  }
+  .video_title{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+  }
+  .title_channel{
+    font-size: 1.7rem;
+  }
+  .name_channel, .views_home{
+    font-size: 1.3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .icon_channel{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } 
+}*/
+
+@media (max-width: 987px){
+  body{
+    background-color: red;
+  }
+  .Landing{
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .videoRepro{
+    flex-direction: column;
+  }
+  .video_container{
+    width: 100%;
+  }
+  .other_vids{
+    width: 60%;
+  }
+  .video_home{
+    width: 70%;
+    height: 80%;
+  }
+  .miniature{
+    width: 100%;
+    height: 100%;
+  }
+  .video_title{
+    height: 100px;
+    font-size: 1.5rem;
+  }
+  .name_channel{
+    font-size: 1.7rem;
+  }
+  .views_home{
+    font-size:1.5rem ;
+  }
+  .icon_channel{
+    width: 54px;
+    height: 54px;
+  }
+  /*.video_info{
+    font-size: 1.5rem;
+  } */
+}
+/* @media (max-width: 787px){
+  /* body{
+    background-color: red;
+  }
+  .Landing{
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .videoRepro{
+    flex-direction: column;
+  }
+  .video_container{
+    width: 100%;
+  }
+  .other_vids{
+    width: 60%;
+  } 
+  .video_home{
+    width: 70%;
+    height: 80%;
+  }
+  .miniature{
+    width: 100%;
+    height: 100%;
+  }
+  .video_title{
+    height: 100px;
+    font-size: 1.5rem;
+  }
+  .name_channel{
+    font-size: 1.7rem;
+  }
+  .views_home{
+    font-size:1.5rem ;
+  }
+  .icon_channel{
+    width: 54px;
+    height: 54px;
+  }
+  /*.video_info{
+    font-size: 1.5rem;
+  } 
 } */

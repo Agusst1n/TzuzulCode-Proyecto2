@@ -18,20 +18,9 @@ const OthersVideos = (video) => {
     })
     .join("");
 
-    //vamos a hacer lo mismo pero con un fort
-    console.log(video, 'video')
-    // for(let v of video){
 
-    //   const other_v = document.createElement('div')
-    //   other_v.id = v.id
-    //   const a = document.createElement('a')
-    //   const miniature = document.createElement('img')
-    //   a.setAttribute("href", `#/${v.slug}`)
-    //   a.appendChild(miniature)
-    //   miniature.src = `${v.miniature}`
-    //   other_v.appendChild(a)
-    //   div.appendChild(other_v)
-    // }
+    console.log(video, 'video')
+
   return div;
 };
 export default OthersVideos;
